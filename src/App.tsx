@@ -1,9 +1,13 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
+const forecastlist = [
+    { }
+]
+
 function App() {
     const [tenki, setTenki] = useState(null);
-    const [daily, setDaily] = useState(null);
+    const [forecast, setForecast] = useState(null);
     const [loading, setLoading] = useState(true);
 
     const API_KEY = "";
@@ -11,11 +15,11 @@ function App() {
     useEffect(() => {
         Promise.all([
             axios.get(`https://api.openweathermap.org/data/2.5/weather?q=seoul&appid=${API_KEY}&units=metric&lang=kr`),
-            axios.get(`https://api.openweathermap.org/data/2.5/forecast/daily?q=seoul&appid=${API_KEY}&units=metric&lang=kr`),
+            axios.get(`https://api.openweathermap.org/data/2.5/forecast?q=seoul&appid=${API_KEY}&units=metric&lang=kr`),
         ])
             .then(([currentRes, dailyRes]) => {
                 setTenki(currentRes.data);
-                setDaily(dailyRes.data);
+                setForecast(dailyRes.data);
                 setLoading(false);
             })
             .catch((error) => {
@@ -25,7 +29,7 @@ function App() {
     }, []);
 
     if (loading) return <h1>로딩 중...</h1>;
-    if (!tenki && !daily) return <h1>날씨 정보를 불러오지 못했습니다.</h1>;
+    if (!tenki && !forecast) return <h1>날씨 정보를 불러오지 못했습니다.</h1>;
 
     return (
         <div>
