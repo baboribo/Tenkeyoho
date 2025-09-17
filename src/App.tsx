@@ -6,7 +6,7 @@ function App() {
     const [forecast, setForecast] = useState(null);
     const [loading, setLoading] = useState(true);
 
-    const API_KEY = "";
+    const API_KEY = "61f33b942044136711be950df4996749";
 
     useEffect(() => {
         Promise.all([
@@ -32,9 +32,13 @@ function App() {
             <h1>{tenki.name}</h1>
             <h2>온도: {tenki.main.temp}°C</h2>
             <p>날씨 상태: {tenki.weather[0].description}</p>
-            {forecast.map((item, index) => (
+            {forecast.list.map((item, index) => (
                 <span key={index}>
-                    {item.dt_txt} - {item.main.temp}°C - {item.weather[0].description}
+                    <ul>
+                        <li>{item.dt_txt}</li>
+                        <li>{item.main.temp}°C</li>
+                        <li>{item.weather[0].description}</li>
+                    </ul>
                 </span>
             ))}
         </div>
