@@ -24,3 +24,7 @@ dist-ssr
 *.sw?
 .env
 *.env
+*.sentry.ts
+sentry.js
+# Sentry Config File
+.sentryclirc
