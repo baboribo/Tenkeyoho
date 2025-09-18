@@ -7,8 +7,7 @@ function App() {
     const [tenki, setTenki] = useState(null);
     const [forecast, setForecast] = useState(null);
     const [loading, setLoading] = useState(true);
-
-    const API_KEY = "";
+    const API_KEY = import.meta.env.VITE_OPENWEATHER_API_KEY;
 
     useEffect(() => {
         Promise.all([
@@ -26,8 +25,8 @@ function App() {
             });
     }, []);
 
-    if (loading) return <h1>로딩 중...</h1>;
-    if (!tenki && !forecast) return <h1>날씨 정보를 불러오지 못했습니다.</h1>;
+    if (loading) return <p>로딩 중...</p>;
+    if (!tenki && !forecast) return <p>날씨 정보를 불러오지 못했습니다.</p>;
 
     return (
         <body>
