@@ -35,7 +35,7 @@ function App() {
                     <h3>{tenki.name}</h3>
                     <div className="text-flex">
                         <p>현재 날씨 상태는</p>
-                        <h1>{tenki.weather[0].description}</h1>
+                        <h1 className="font-bold">{tenki.weather[0].description}</h1>
                     </div>
                     <img src={`https://openweathermap.org/img/wn/${tenki.weather.icon}@2x.png`} alt="weather icon"/>
                     <p>온도: {tenki.main.temp}°C</p>
