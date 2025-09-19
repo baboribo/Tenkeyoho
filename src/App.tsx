@@ -27,6 +27,7 @@ function App() {
         Promise.all([
             axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${query}&appid=${API_KEY}&units=metric&lang=kr`), // 1 현재 날씨
             axios.get(`https://api.openweathermap.org/data/2.5/forecast?q=${query}&appid=${API_KEY}&units=metric&lang=kr`), // 2 예보
+            // axios.get(`http://api.openweathermap.org/data/2.5/air_pollution?lat='37.33572603910012'&lon='126.83683619348417'&appid=${API_KEY}`) // 3 대기 오염
         ])
             .then(([currentRes, forecastRes]) => {
                 setTenki(currentRes.data);
@@ -40,7 +41,7 @@ function App() {
     }, []);
 
     if (loading) return <motion.p transition={transition} initial={{ opacity: 0, y: 40, x: 40, scale: 0.9 }} animate={{ opacity: 1, y: 20, scale: 1 }} exit={{ opacity: 0 }}>로딩 중...</motion.p>;
-    if (!tenki && !forecast) return <p>날씨 정보를 불러오지 못했습니다.</p>;
+    if (!tenki && !forecast) return <motion.p transition={transition} initial={{ opacity: 0, y: 40, x: 40, scale: 0.9 }} animate={{ opacity: 1, y: 20, scale: 1 }}>날씨 정보를 불러오지 못했습니다.</motion.p>;
 
     return (
         <motion.body transition={transition} initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0 }} className="app-container flex flex-col gap-6 p-6">
@@ -56,7 +57,7 @@ function App() {
                             <h1 className="font-bold">{tenki.weather[0].description}</h1>
                             <h3 className="text-3xl">{tenki.main.temp}°C</h3>
                         </div>
-                        <motion.img transition={transition2} initial={{opacity: 0}} animate={{opacity: 1}} className="w-30 h-30" src={`https://openweathermap.org/img/wn/${tenki.weather[0].icon}@2x.png`} alt="weather icon"/>
+                        <motion.img transition={transition2} initial={{opacity: 0}} animate={{opacity: 1}} className="w-40 h-40" src={`https://openweathermap.org/img/wn/${tenki.weather[0].icon}@2x.png`} alt="weather icon"/>
                     </div>
                     <ul className="flex gap-6 justify-items-center w-full">
                         <li className="flex flex-col">
