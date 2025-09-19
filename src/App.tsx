@@ -1,12 +1,20 @@
 import { useState, useEffect } from 'react';
 import useEmblaCarousel from "embla-carousel-react";
 import axios from 'axios';
+import { motion } from "motion/react"
 
 function App() {
     const [emblaRef] = useEmblaCarousel({dragFree: true});
     const [tenki, setTenki] = useState(null);
     const [forecast, setForecast] = useState(null);
     const [loading, setLoading] = useState(true);
+    const transition = {
+        duration: 0.2,
+        stiffness: 1185,
+        dumping: 100,
+        mass: 1,
+    }
+
     const API_KEY = import.meta.env.VITE_OPENWEATHER_API_KEY;
 
     useEffect(() => {
@@ -29,7 +37,7 @@ function App() {
     if (!tenki && !forecast) return <p>날씨 정보를 불러오지 못했습니다.</p>;
 
     return (
-        <body>
+        <motion.body transition={transition} initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0 }} className="app-container flex flex-col gap-6 p-6">
             <main>
                 <section className="flex flex-col gap-4 size-100%">
                     <div className="flex gap-2 size-100%">
@@ -88,7 +96,7 @@ function App() {
                     </div>
                 </section>
             </main>
-        </body>
+        </motion.body>
 
     );
 }
