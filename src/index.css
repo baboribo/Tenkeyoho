@@ -7,7 +7,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #0c0d0f;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -35,7 +35,7 @@ main {
     display: flex;
     flex-direction: column;
     place-items: start;
-    max-width: 800px;
+    max-width: 1000px;
     overflow: hidden;
     gap: 20px;
 }
@@ -64,7 +64,7 @@ p {
 
 @media (prefers-color-scheme: dark) {
     :root {
-        background-color: #242424;
+        background-color: #0c0d0f;
     }
 }
 
