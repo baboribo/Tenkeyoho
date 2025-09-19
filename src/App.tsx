@@ -31,16 +31,42 @@ function App() {
     return (
         <body>
             <main>
-                <header>
-                    <h3>{tenki.name}</h3>
-                    <div className="text-flex">
-                        <p>현재 날씨 상태는</p>
-                        <h1 className="font-bold">{tenki.weather[0].description}</h1>
+                <section className="flex flex-col gap-4 size-100%">
+                    <div className="flex gap-2 size-100%">
+                        <h3>{tenki.name}</h3>
+                        <p>{tenki.sys.country}</p>
                     </div>
-                    <img src={`https://openweathermap.org/img/wn/${tenki.weather.icon}@2x.png`} alt="weather icon"/>
-                    <p>온도: {tenki.main.temp}°C</p>
-                    <h3>체감 온도: {tenki.main.feels_like}°C</h3>
-                </header>
+                    <div className="flex justify-between items-center">
+                        <div className="text-flex">
+                            <p>현재 날씨 상태</p>
+                            <h1 className="font-bold">{tenki.weather[0].description}</h1>
+                            <h3 className="text-3xl">{tenki.main.temp}°C</h3>
+                        </div>
+                        <img className="w-30 h-30" src={`https://openweathermap.org/img/wn/${tenki.weather[0].icon}@2x.png`} alt="weather icon"/>
+                    </div>
+                    <ul className="flex gap-6">
+                        <li className="flex flex-col">
+                            <p>체감 온도</p>
+                            <h4 className="text-2xl font-bold">{tenki.main.feels_like}°C</h4>
+                        </li>
+                        <li className="flex flex-col">
+                            <p>최고 온도</p>
+                            <h4 className="text-2xl font-bold">{tenki.main.temp_max}°C</h4>
+                        </li>
+                        <li className="flex flex-col">
+                            <p>최저 온도</p>
+                            <h4 className="text-2xl font-bold">{tenki.main.temp_min}°C</h4>
+                        </li>
+                        <li className="flex flex-col">
+                            <p>습도</p>
+                            <h4 className="text-2xl font-bold">{tenki.main.humidity}%</h4>
+                        </li>
+                        <li className="flex flex-col">
+                            <p>풍속</p>
+                            <h4 className="text-2xl font-bold">{tenki.wind.speed}m/s</h4>
+                        </li>
+                    </ul>
+                </section>
                 <section className="embla" ref={emblaRef}>
                     <div className="item">
                         {forecast.list.map((item, index) => (
@@ -48,10 +74,14 @@ function App() {
                         <ul className="tenki-list-item">
                             <li>{item.dt_txt}</li>
                             <li>
-                                <h2>{item.main.feels_like}°C</h2>
+                                <h2 className="text-2xl font-bold">{item.weather[0].description}</h2>
                             </li>
-                            <li>{item.main.temp}°C</li>
-                            <li>{item.weather[0].description}</li>
+                            <li className="text-xl">{item.main.temp}°C</li>
+                            <li>
+                                <img className="w-20 h-20" src={`https://openweathermap.org/img/wn/${item.weather[0].icon}@2x.png`} alt="weather icon"/>
+                                 <p>체감 온도</p>
+                                 <h4 className="text-lg">{item.main.feels_like}°C</h4>
+                            </li>
                         </ul>
                     </span>
                         ))}

@@ -37,6 +37,7 @@ main {
     place-items: start;
     max-width: 800px;
     overflow: hidden;
+    gap: 20px;
 }
 
 h1 {
