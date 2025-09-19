@@ -3,7 +3,7 @@ import useEmblaCarousel from "embla-carousel-react";
 import axios from 'axios';
 
 function App() {
-    const [emblaRef] = useEmblaCarousel()
+    const [emblaRef] = useEmblaCarousel({dragFree: true});
     const [tenki, setTenki] = useState(null);
     const [forecast, setForecast] = useState(null);
     const [loading, setLoading] = useState(true);

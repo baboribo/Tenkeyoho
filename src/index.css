@@ -36,6 +36,7 @@ main {
     flex-direction: column;
     place-items: start;
     max-width: 800px;
+    overflow: hidden;
 }
 
 h1 {
@@ -91,7 +92,7 @@ p {
 }
 
 .embla {
-    width: 800px;
+    width: 100%;
     overflow: hidden;
 }
 
