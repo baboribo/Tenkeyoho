@@ -2,16 +2,16 @@ import { useState, useEffect } from 'react';
 import useEmblaCarousel from "embla-carousel-react";
 import axios from 'axios';
 import { motion } from "motion/react"
-import type { exit } from 'process';
-import { animate, delay } from 'motion';
 
 function App() {
     const [emblaRef] = useEmblaCarousel({dragFree: true});
-    const [tenki, setTenki] = useState(null);
-    const [forecast, setForecast] = useState(null);
-    const [air_pollution, setAir_pollution] = useState(null);
+    const [tenki, setTenki] = useState();
+    const [forecast, setForecast] = useState();
+    const [air_pollution, setAir_pollution] = useState();
     const [loading, setLoading] = useState(true);
     const query = 'seoul';
+    const [coords, setCoords] = useState()
+
     const transition = {
         duration: 0.44,
         ease: [.17,.02,.05,.98],
@@ -24,11 +24,46 @@ function App() {
 
     const API_KEY = import.meta.env.VITE_OPENWEATHER_API_KEY;
 
+    useEffect(() => { // 위치 얻기
+        navigator.geolocation.getCurrentPosition(
+            (position) => {
+                setCoords({
+                    lat: position.coords.latitude,
+                    lon: position.coords.longitude,
+                });
+            },
+            (error) => {
+                switch(error.code) {
+                    case 1:
+                        console.error("권한이 거부되었습니다.", error);
+                        break;
+                    case 2:
+                        console.error("위치 정보를 가져올 수 없습니다.", error);
+                        break;
+                    case 3:
+                        console.error("시간이 초과되었습니다.", error);
+                        break;
+                    default:
+                        console.error(error);
+                        break;
+                }
+                setLoading(false);
+            },
+            {
+                enableHighAccuracy: true, // GPS를 먼저 사용할 것.
+                timeout: 5000, // 시간 초과
+                maximumAge: 0,
+            }
+        );
+    }, []); // 한 번만 실행할 것.
     useEffect(() => {
+        if (!coords) return;
+        const { lat, lon } = coords;
+
         Promise.all([
-            axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${query}&appid=${API_KEY}&units=metric&lang=kr`), // 1 현재 날씨
-            axios.get(`https://api.openweathermap.org/data/2.5/forecast?q=${query}&appid=${API_KEY}&units=metric&lang=kr`), // 2 예보
-            axios.get(`https://api.openweathermap.org/data/2.5/air_pollution?lat=37.566535&lon=126.9779692&appid=${API_KEY}`) // 3 대기 오염
+            axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric&lang=kr`), // 1 현재 날씨
+            axios.get(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric&lang=kr`), // 2 예보
+            axios.get(`https://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${API_KEY}`) // 3 대기 오염
         ])
             .then(([currentRes, forecastRes, air_pollutionRes]) => {
                 setTenki(currentRes.data); // 현재 날씨
@@ -46,7 +81,7 @@ function App() {
     if (!tenki && !forecast) return <motion.p transition={transition} initial={{ opacity: 0, y: 40, x: 40, scale: 0.9 }} animate={{ opacity: 1, y: 20, scale: 1 }}>날씨 정보를 불러오지 못했습니다.</motion.p>;
 
     return (
-        <motion.body transition={transition} initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0 }} className="app-container flex flex-col gap-6 p-6">
+        <motion.body transition={transition} initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} className="app-container flex flex-col gap-6 p-6">
             <main>
                 <section className="flex flex-col gap-4 w-full">
                     <div className="flex gap-2 w-full items-center">
