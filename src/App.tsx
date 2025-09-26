@@ -9,7 +9,6 @@ function App() {
     const [forecast, setForecast] = useState();
     const [air_pollution, setAir_pollution] = useState();
     const [loading, setLoading] = useState(true);
-    const query = 'seoul';
     const [coords, setCoords] = useState()
 
     const transition = {
@@ -29,7 +28,7 @@ function App() {
             (position) => {
                 setCoords({
                     lat: position.coords.latitude,
-                    lon: position.coords.longitude,
+                    lon: position.coords.longitude
                 });
             },
             (error) => {
@@ -55,10 +54,10 @@ function App() {
                 maximumAge: 0,
             }
         );
-    }, []); // 한 번만 실행할 것.
+    }); // 한 번만 실행할 것.
     useEffect(() => {
         if (!coords) return;
-        const { lat, lon } = coords;
+        const {lat, lon} = coords;
 
         Promise.all([
             axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric&lang=kr`), // 1 현재 날씨
@@ -75,7 +74,7 @@ function App() {
                 console.error("날씨 정보를 불러오지 못했습니다:", error); // API 호출이 하나라도 안 되었을 경우 -> 콘솔에 에러를 표시
                 setLoading(false); // 에러가 났다면 로딩 상태를 비활성화할 것.
             });
-    }, []);
+    }, [coords]);
 
     if (loading) return <motion.p transition={transition} initial={{ opacity: 0, y: 40, x: 40, scale: 0.9 }} animate={{ opacity: 1, y: 20, scale: 1 }} exit={{ opacity: 0 }}>로딩 중...</motion.p>;
     if (!tenki && !forecast) return <motion.p transition={transition} initial={{ opacity: 0, y: 40, x: 40, scale: 0.9 }} animate={{ opacity: 1, y: 20, scale: 1 }}>날씨 정보를 불러오지 못했습니다.</motion.p>;
