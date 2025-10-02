@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build && npm run sentry:sourcemaps",
+    "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
     "sentry:sourcemaps": "sentry-cli sourcemaps inject --org machidoro --project javascript-react ./build && sentry-cli sourcemaps upload --org machidoro --project javascript-react ./build"
