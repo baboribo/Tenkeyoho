@@ -90,10 +90,11 @@ function App() {
                         <div className="text-flex">
                             <div className="flex gap-2 w-full items-center">
                                 <h3>{tenki.name}</h3>
-                                <p>{tenki.sys.country}</p>
                             </div>
-                            <h1 className="font-bold">{tenki.weather[0].description}</h1>
-                            <h3 className="text-3xl">{tenki.main.temp}°C</h3>
+                            <div className="flex flex-row gap-0 w-full items-end">
+                                <h1 className="font-bold">{tenki.main.temp}°</h1>
+                                <h3 className="text-3xl font-bold pb-6">{tenki.weather[0].description}</h3>
+                            </div>
                         </div>
                         <motion.img transition={transition2} initial={{opacity: 0}} animate={{opacity: 1}} className="w-40 h-40" src={`https://openweathermap.org/img/wn/${tenki.weather[0].icon}@2x.png`} alt="weather icon"/>
                     </div>
@@ -143,17 +144,18 @@ function App() {
                         {forecast?.list?.map((item: any) => (
                             <ul className="tenki-list-item" key={item.dt_txt}>
                                 <li>{item.dt_txt}</li>
-                                <li className="flex flex-col">
-                                    <motion.img transition={transition2} initial={{opacity: 0}} animate={{opacity: 1}} className="w-20 h-20" src={`https://openweathermap.org/img/wn/${item.weather[0].icon}@2x.png`} alt="weather icon"/>
-                                    <div>
-                                        <h2 className="text-2xl font-bold">{item.weather[0].description}</h2>
-                                        <h3 className="text-xl">{item.main.temp}°C</h3>
-                                    </div>
-                                </li>
-                                <li>
-                                    <p>체감 온도</p>
-                                    <h4 className="text-lg">{item.main.feels_like}°C</h4>
-                                </li>
+                                <ul className="flex flex-col gap-2">
+                                    <li className="flex flex-col">
+                                        <motion.img transition={transition2} initial={{opacity: 0}} animate={{opacity: 1}} className="w-20 h-20" src={`https://openweathermap.org/img/wn/${item.weather[0].icon}@2x.png`} alt="weather icon"/>
+                                        <div>
+                                            <h2 className="text-2xl font-bold">{item.weather[0].description}</h2>
+                                            <h3 className="text-xl">{item.main.temp}°C</h3>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <p>체감 온도</p>
+                                        <h4 className="text-lg">{item.main.feels_like}°C</h4>                                  </li>
+                                </ul>
                             </ul>
                         ))}
                     </div>
