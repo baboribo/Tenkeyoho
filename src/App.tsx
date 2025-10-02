@@ -82,8 +82,8 @@ function App() {
     if (!tenki || !forecast) return <motion.p transition={transition} initial={{ opacity: 0, y: 40, x: 40, scale: 0.9 }} animate={{ opacity: 1, y: 20, scale: 1 }}>날씨 정보를 불러오지 못했습니다. 인터넷 상태를 확인하거나 기기에 GPS가 있는지 확인하세요.</motion.p>;
 
     return (
-        <motion.div transition={transition} initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} className="app-container flex flex-col gap-6 p-6">
-            <main>
+        <motion.div transition={transition} initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} className="app-container flex flex-col mx-auto gap-6">
+            <main className="mx-auto">
                 <section className="flex flex-col gap-4 w-full">
                     {/* --- 현재 날씨 텍스트와 상태, 온도, 현재 상태 아이콘이 포함된 div --- */}
                     <div className="flex justify-between items-center pt-2"> 
@@ -143,13 +143,13 @@ function App() {
                     <div className="item">
                         {forecast?.list?.map((item: any) => (
                             <ul className="tenki-list-item" key={item.dt_txt}>
-                                <li>{item.dt_txt}</li>
+                                <li className="flex w-28">{item.dt_txt}</li>
                                 <ul className="flex flex-col gap-2">
                                     <li className="flex flex-col">
                                         <motion.img transition={transition2} initial={{opacity: 0}} animate={{opacity: 1}} className="w-20 h-20" src={`https://openweathermap.org/img/wn/${item.weather[0].icon}@2x.png`} alt="weather icon"/>
                                         <div>
-                                            <h2 className="text-2xl font-bold">{item.weather[0].description}</h2>
                                             <h3 className="text-xl">{item.main.temp}°C</h3>
+                                            <h2 className="text-2xl font-bold">{item.weather[0].description}</h2>
                                         </div>
                                     </li>
                                     <li>

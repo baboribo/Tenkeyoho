@@ -68,13 +68,14 @@ main {
 
 h1 {
     font-size: 72px;
+    letter-spacing: -1.5px;
     margin: 0;
 }
 
 h3 {
     font-size: 24px;
     margin: 0;
-    letter-spacing: -0.8px;
+    letter-spacing: -0.6px;
     font-weight: 600;
     color: var(--sub-font-color);
 }
@@ -93,19 +94,17 @@ p {
 
 .item {
     display: flex;
-    gap: 10px;
+    gap: 20px;
     align-items: center;
 }
 
 .tenki-list-item {
-    /* width: 1000px !important; */
+    width: 300px !important;
     display: flex;
     flex-direction: column;
     text-decoration: none;
     list-style: none;
-    margin-top: 14px;
-    margin-right: 20px;
-    padding-right: 10px;
+    margin: 6px 11px 6px 0px;
     background-color: none;
     border-radius: 20px;
 }
