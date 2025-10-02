@@ -1,7 +1,13 @@
 @import "tailwindcss";
 
+@font-face {
+	font-family: 'SUIT Variable';
+	font-weight: 100 900;
+	src: url('/fonts/SUIT-Variable.woff2') format('woff2-variations');
+}
+
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: SUIT Variable, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 

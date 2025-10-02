@@ -85,18 +85,19 @@ function App() {
         <motion.div transition={transition} initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} className="app-container flex flex-col gap-6 p-6">
             <main>
                 <section className="flex flex-col gap-4 w-full">
-                    <div className="flex gap-2 w-full items-center">
-                        <h3>{tenki.name}</h3>
-                        <p>{tenki.sys.country}</p>
-                    </div>
-                    <div className="flex justify-between items-center">
+                    {/* --- 현재 날씨 텍스트와 상태, 온도, 현재 상태 아이콘이 포함된 div --- */}
+                    <div className="flex justify-between items-center pt-2"> 
                         <div className="text-flex">
-                            <h4 className="text-lg">현재 날씨</h4>
+                            <div className="flex gap-2 w-full items-center">
+                                <h3>{tenki.name}</h3>
+                                <p>{tenki.sys.country}</p>
+                            </div>
                             <h1 className="font-bold">{tenki.weather[0].description}</h1>
                             <h3 className="text-3xl">{tenki.main.temp}°C</h3>
                         </div>
                         <motion.img transition={transition2} initial={{opacity: 0}} animate={{opacity: 1}} className="w-40 h-40" src={`https://openweathermap.org/img/wn/${tenki.weather[0].icon}@2x.png`} alt="weather icon"/>
                     </div>
+                    {/* --- */}
                     <ul className="flex gap-6 justify-items-center w-full">
                         <li className="flex flex-col">
                             <p>체감 온도</p>
