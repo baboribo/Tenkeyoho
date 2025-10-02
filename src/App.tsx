@@ -79,7 +79,7 @@ function App() {
     }, [coords]);
 
     if (loading) return <motion.p transition={transition} initial={{ opacity: 0, y: 40, x: 40, scale: 0.9 }} animate={{ opacity: 1, y: 20, scale: 1 }} exit={{ opacity: 0 }}>로딩 중...</motion.p>;
-    if (!tenki || !forecast) return <motion.p transition={transition} initial={{ opacity: 0, y: 40, x: 40, scale: 0.9 }} animate={{ opacity: 1, y: 20, scale: 1 }}>날씨 정보를 불러오지 못했습니다.</motion.p>;
+    if (!tenki || !forecast) return <motion.p transition={transition} initial={{ opacity: 0, y: 40, x: 40, scale: 0.9 }} animate={{ opacity: 1, y: 20, scale: 1 }}>날씨 정보를 불러오지 못했습니다. 인터넷 상태를 확인하거나 기기에 GPS가 있는지 확인하세요.</motion.p>;
 
     return (
         <motion.div transition={transition} initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} className="app-container flex flex-col gap-6 p-6">
@@ -139,7 +139,7 @@ function App() {
                 </section>
                 <motion.section transition={transition2} initial={{opacity: 0, y: 60}} animate={{opacity: 1, y: 0}} className="embla" ref={emblaRef}>
                     <div className="item">
-                        {forecast?.list?.map((item) => (
+                        {forecast?.list?.map((item: any) => (
                             <ul className="tenki-list-item" key={item.dt_txt}>
                                 <li>{item.dt_txt}</li>
                                 <li className="flex flex-col">
