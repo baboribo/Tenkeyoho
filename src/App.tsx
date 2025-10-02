@@ -82,8 +82,8 @@ function App() {
     if (!tenki || !forecast) return <motion.p transition={transition} initial={{ opacity: 0, y: 40, x: 40, scale: 0.9 }} animate={{ opacity: 1, y: 20, scale: 1 }}>날씨 정보를 불러오지 못했습니다. 인터넷 상태를 확인하거나 기기에 GPS가 있는지 확인하세요.</motion.p>;
 
     return (
-        <motion.div transition={transition} initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} className="app-container flex flex-col mx-auto gap-6">
-            <main className="mx-auto">
+        <motion.div transition={transition} initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} className="app-container flex flex-col mx-auto gap-6 pl-10 pr-10 pt-3">
+            <main className="justify-center">
                 <section className="flex flex-col gap-4 w-full">
                     {/* --- 현재 날씨 텍스트와 상태, 온도, 현재 상태 아이콘이 포함된 div --- */}
                     <div className="flex justify-between items-center pt-2"> 
