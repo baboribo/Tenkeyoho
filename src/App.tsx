@@ -3,6 +3,7 @@ import useEmblaCarousel from "embla-carousel-react";
 import axios from 'axios';
 import { motion } from "framer-motion";
 import type { Transition } from "framer-motion";
+// import { Application } from '@pixi/react'
 
 function App() {
     const [emblaRef] = useEmblaCarousel({dragFree: true});
@@ -82,11 +83,13 @@ function App() {
     if (!tenki || !forecast) return <motion.p transition={transition} initial={{ opacity: 0, y: 40, x: 40, scale: 0.9 }} animate={{ opacity: 1, y: 20, scale: 1 }}>날씨 정보를 불러오지 못했습니다. 인터넷 상태를 확인하거나 기기에 GPS가 있는지 확인하세요.</motion.p>;
 
     return (
-        <motion.div transition={transition} initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} className="app-container flex flex-col mx-auto gap-6 pl-10 pr-10 pt-3">
-            <main className="justify-center">
-                <section className="flex flex-col gap-4 w-full">
+        <motion.div transition={transition} initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} className="app-container flex flex-col gap-6 pl-10 pr-10 pt-16 max-w-screen min-h-300px">
+            {/* <Application autoStart sharedTicker /> */}
+            <main>
+                <section className="flex flex-col gap-2 w-full">
                     {/* --- 현재 날씨 텍스트와 상태, 온도, 현재 상태 아이콘이 포함된 div --- */}
-                    <div className="flex justify-between items-center pt-2"> 
+                    <div className="flex gap-6 items-center pt-2"> 
+                        <motion.img transition={transition2} initial={{opacity: 0}} animate={{opacity: 1}} className="w-40 h-40" src={`https://openweathermap.org/img/wn/${tenki.weather[0].icon}@4x.png`} alt="weather icon"/>
                         <div className="text-flex">
                             <div className="flex gap-2 w-full items-center">
                                 <h3>{tenki.name}</h3>
@@ -96,10 +99,9 @@ function App() {
                                 <h3 className="text-3xl font-bold pb-6">{tenki.weather[0].description}</h3>
                             </div>
                         </div>
-                        <motion.img transition={transition2} initial={{opacity: 0}} animate={{opacity: 1}} className="w-40 h-40" src={`https://openweathermap.org/img/wn/${tenki.weather[0].icon}@2x.png`} alt="weather icon"/>
                     </div>
                     {/* --- */}
-                    <ul className="flex gap-6 justify-items-center w-full">
+                    <ul className="flex gap-6 ml-46 justify-items-center w-full">
                         <li className="flex flex-col">
                             <p>체감 온도</p>
                             <h4 className="text-2xl font-bold">{tenki.main.feels_like}°C</h4>
@@ -122,7 +124,7 @@ function App() {
                         </li>
                     </ul>
                 </section>
-                <section className="flex flex-col gap-1 w-full">
+                <section className="flex ml-46 flex-col gap-1 w-full">
                     <h4 className="text-lg font-semibold">대기질</h4>
                     <ul className="flex flex-row gap-4 w-full">
                         <li className="flex flex-col">
