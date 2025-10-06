@@ -87,12 +87,12 @@ export const koTenkiDescription: Record<string, string> = {
     "shower drizzle": "소나기성 이슬비가 내리고 있습니다.",
 
     // Group 5xx: Rain
-    "light rain": "약한 비가 내리고 있습니다.",
-    "moderate rain": "보통 비가 내리고 있습니다.",
-    "heavy intensity rain": "강한 비가 내리고 있습니다.",
-    "very heavy rain": "매우 강한 비가 내리고 있습니다.",
-    "extreme rain": "폭우가 내리고 있습니다.",
-    "freezing rain": "얼어붙는 비가 내리고 있습니다.",
+    "light rain": "비가 조금씩 내리고 있습니다.",
+    "moderate rain": "비가 내리고 있습니다.",
+    "heavy intensity rain": "비가 많이 내리고 있습니다.",
+    "very heavy rain": "비가 매우 많이 쏟아지고 있습니다.",
+    "extreme rain": "폭우가 쏟아지고 있습니다.",
+    "freezing rain": "어는비가 내리고 있습니다.",
     "light intensity shower rain": "약한 소나기가 내리고 있습니다.",
     "shower rain": "소나기가 내리고 있습니다.",
     "heavy intensity shower rain": "강한 소나기가 내리고 있습니다.",
