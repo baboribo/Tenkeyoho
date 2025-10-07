@@ -434,30 +434,6 @@ function App() {
                             </div>
                         </div>
                     </section>
-                    <motion.div transition={transition} initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} className='flex flex-col w-full gap-4'>
-                        <hr className="mt-6 flex flex-col gap-3 border-t border-gray-300 dark:border-gray-700 pt-3 mb-2 w-full"/>
-                        <div className='flex flex-col gap-4'>
-                            <div className='flex flex-col'>
-                                <p>날씨 데이터 제공</p>
-                                <a href='https://openweathermap.org/'>
-                                    <h4 className="text-[#213547] dark:text-[#eeecf4] font-bold opacity-86 hover:opacity-100 transition cursor-pointer">OpenWeather</h4>
-                                </a>
-                            </div>
-                            <div className='flex flex-col'>
-                                <p>법적 고지</p>
-                                <div className='flex flex-row gap-4'>
-                                    <a href='https://slashpage.com/babo/ywk9j7298x1dzmgpqvnd'>
-                                        <h4 className="text-[#213547] dark:text-[#eeecf4] font-bold opacity-86 hover:opacity-100 transition cursor-pointer">이용약관</h4>
-                                    </a>
-                                    <a href='https://slashpage.com/babo/xjqy1g2vwgrkvm6vd54z'>
-                                        <h4 className="text-[#213547] dark:text-[#eeecf4] font-bold opacity-86 hover:opacity-100 transition cursor-pointer">개인정보처리방침</h4>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        
-                    </motion.div>
                 </section>
                 <motion.section transition={transition2} initial={{opacity: 0, y: 60}} animate={{opacity: 1, y: 0}} className="embla" ref={emblaRef}>
                     <div className="item">
@@ -494,6 +470,28 @@ function App() {
                     </div>
                 </motion.section>
             </main>
+            <motion.div transition={transition} initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} className='flex flex-col w-full gap-4'>
+                <hr className="mt-6 flex flex-col gap-3 border-t border-gray-300 dark:border-gray-700 pt-3 mb-2 w-full"/>
+                <div className='flex flex-col gap-4'>
+                    <div className='flex flex-col'>
+                        <p>날씨 데이터 제공</p>
+                        <a href='https://openweathermap.org/'>
+                            <h4 className="text-[#213547] dark:text-[#eeecf4] font-bold opacity-86 hover:opacity-100 transition cursor-pointer">OpenWeather</h4>
+                        </a>
+                    </div>
+                    <div className='flex flex-col'>
+                        <p>법적 고지</p>
+                        <div className='flex flex-row gap-4'>
+                            <a href='https://slashpage.com/babo/ywk9j7298x1dzmgpqvnd'>
+                                <h4 className="text-[#213547] dark:text-[#eeecf4] font-bold opacity-86 hover:opacity-100 transition cursor-pointer">이용약관</h4>
+                            </a>
+                            <a href='https://slashpage.com/babo/xjqy1g2vwgrkvm6vd54z'>
+                                <h4 className="text-[#213547] dark:text-[#eeecf4] font-bold opacity-86 hover:opacity-100 transition cursor-pointer">개인정보처리방침</h4>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </motion.div>
         </motion.div>
     );
 }
