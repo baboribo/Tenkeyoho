@@ -69,13 +69,11 @@ body {
 }
 
 main {
-    margin-top: 50px;
+    margin-top: 60px;
     display: flex;
-    flex-direction: row;
-    place-items: start;
-    max-width: 1320px;
+    max-width: 1420px;
     overflow: hidden;
-    gap: 60px;
+    gap: 64px;
 }
 
 h1 {
@@ -139,7 +137,7 @@ p {
     list-style: none;
     padding: 12px 18px;
     border-radius: 18px;
-    overflow: hidden;
+    overflow: visible;
     z-index: 10;
 }
 
@@ -167,7 +165,7 @@ p {
 
 .embla {
     width: 100%;
-    overflow: hidden;
+    overflow: visible;
 }
 
 .embla__container {

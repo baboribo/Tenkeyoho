@@ -288,10 +288,10 @@ function App() {
     if (!tenki || !forecast) return <motion.p transition={transition} initial={{ opacity: 0, y: 80, x: 50, scale: 0.8 }} animate={{ opacity: 1, y: 50, scale: 1 }}>날씨 정보를 불러오지 못했습니다.</motion.p>;
 
     return (
-        <motion.div transition={transition} initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} className="app-container flex flex-col gap-6 pl-10 pr-10 max-w-screen min-h-300px">
+        <motion.div transition={transition} initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} className="app-container flex flex-col gap-6 pl-10 pr-10 min-h-270px">
             {/* <Application autoStart sharedTicker /> */}
-            <main className="flex flex-col gap-6 w-full max-w-screen">
-                <section className="sticky top-0 flex flex-col gap-2 w-full">
+            <main className="flex flex-col lg:flex-row gap-6 w-full">
+                <section className="sticky top-0 pl-5 pr-5 lg:ml-0 lg:mr-0 flex flex-col gap-2 w-full">
                     {/* --- 현재 날씨 텍스트와 상태, 온도, 현재 상태 아이콘이 포함된 div --- */}
                     <div className="flex gap-6 items-center pt-2"> 
                         <div className="text-flex">
@@ -304,11 +304,11 @@ function App() {
                             </div>
                             <p className="text-lg">{getKoTenkiDescription(tenki.weather[0].description)}</p>
                         </div>
+                        <motion.img transition={transition2} initial={{opacity: 0, y: 40, x: 30}} animate={{opacity: 1, y: -6}} className="w-40 h-40" src={`https://openweathermap.org/img/wn/${tenki.weather[0].icon}@4x.png`} alt="weather icon"/>
                     </div>
                     {/* --- */}
                     <section className="flex flex-row items-center w-full">
-                        <motion.img transition={transition2} initial={{opacity: 0, y: 40}} animate={{opacity: 1, y: -6}} className="w-40 h-40" src={`https://openweathermap.org/img/wn/${tenki.weather[0].icon}@4x.png`} alt="weather icon"/>
-                        <div className="flex flex-col gap-4 ml-3.5 w-full">
+                        <div className="flex flex-col gap-4 ml-0 mt-5 w-full">
                             <ul className="flex gap-6 ml-0 justify-items-center w-full">
                                 <li className="flex flex-col">
                                     <p>체감 온도</p>
@@ -360,7 +360,7 @@ function App() {
                                 </a>
                             </div>
                             <div className='flex flex-col'>
-                                <p>중요</p>
+                                <p>법적 고지</p>
                                 <div className='flex flex-row gap-4'>
                                     <a href='https://slashpage.com/babo/ywk9j7298x1dzmgpqvnd'>
                                         <h4 className="text-[#213547] dark:text-[#eeecf4] font-bold opacity-86 hover:opacity-100 transition cursor-pointer">이용약관</h4>
