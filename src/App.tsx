@@ -130,7 +130,7 @@ export const koTenkiDescription: Record<string, string> = {
     "few clouds": "하늘에 구름이 조금 끼어 있고, 맑은 날씨예요.",
     "scattered clouds": "하늘 곳곳에 구름이 껴 있네요.",
     "broken clouds": "구름이 많아 흐린 상태예요.",
-    "overcast clouds": "하늘에.. 구름이 너무나 많네요. 매우 흐린 상태예요.",
+    "overcast clouds": "하늘에 구름이 너무나 많네요. 매우 흐린 상태예요.",
 }
 export function getKoTenkiDescription(englishDescription: string): string {
     return koTenkiDescription[englishDescription] || englishDescription;
