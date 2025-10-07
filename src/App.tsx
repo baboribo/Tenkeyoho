@@ -395,6 +395,7 @@ function App() {
                                                 }}
                                             />
                                             <h4 className="text-2xl font-bold">{getAqiStatus(air_pollution.main.aqi)}</h4>
+                                            <p>{air_pollution.main.aqi}</p>
                                         </div>
                                     </li>
                                     <li className="flex flex-col">
@@ -410,6 +411,7 @@ function App() {
                                                 }}
                                             />
                                             <h4 className="text-2xl font-bold">{getPm10Status(air_pollution.components.pm10)}</h4>
+                                            <p>{air_pollution.components.pm10}</p>
                                         </div>
                                     </li>
                                     <li className="flex flex-col">
@@ -425,6 +427,7 @@ function App() {
                                                 }}
                                             />
                                             <h4 className="text-2xl font-bold">{getPm25Status(air_pollution.components.pm2_5)}</h4>
+                                            <p>{air_pollution.components.pm2_5}</p>
                                         </div>
                                     </li>
                                 </ul>
