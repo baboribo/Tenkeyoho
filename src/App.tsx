@@ -65,12 +65,12 @@ export function getKoTenkiMain(englishMain: string): string {
 }
 export const koTenkiDescription: Record<string, string> = {
     // Group 2xx: Thunderstorm
-    "thunderstorm with light rain": "약한 비와 함께 천둥번개가 치고 있습니다.",
+    "thunderstorm with light rain": "조금의 비와 함께 천둥번개가 치고 있습니다.",
     "thunderstorm with rain": "비와 함께 천둥번개가 치고 있습니다.",
-    "thunderstorm with heavy rain": "강한 비와 함께 천둥번개가 치고 있습니다.",
+    "thunderstorm with heavy rain": "많은 비와 함께 천둥번개가 치고 있습니다.",
     "light thunderstorm": "약한 천둥번개가 발생하고 있습니다.",
     "thunderstorm": "천둥번개가 치고 있습니다.",
-    "heavy thunderstorm": "강한 천둥번개가 치고 있습니다.",
+    "heavy thunderstorm": "천둥번개가 강하게 치고 있습니다.",
     "ragged thunderstorm": "불규칙한 천둥번개가 발생하고 있습니다.",
     "thunderstorm with light drizzle": "약한 이슬비와 함께 천둥번개가 치고 있습니다.",
     "thunderstorm with drizzle": "이슬비와 함께 천둥번개가 치고 있습니다.",
@@ -87,26 +87,26 @@ export const koTenkiDescription: Record<string, string> = {
     "shower drizzle": "소나기성 이슬비가 내리고 있습니다.",
 
     // Group 5xx: Rain
-    "light rain": "비가 조금씩 내리고 있습니다.",
-    "moderate rain": "비가 내리고 있습니다.",
-    "heavy intensity rain": "비가 많이 내리고 있습니다.",
-    "very heavy rain": "비가 매우 많이 쏟아지고 있습니다.",
-    "extreme rain": "폭우가 쏟아지고 있습니다.",
-    "freezing rain": "어는비가 내리고 있습니다.",
-    "light intensity shower rain": "약한 소나기가 내리고 있습니다.",
-    "shower rain": "소나기가 내리고 있습니다.",
-    "heavy intensity shower rain": "강한 소나기가 내리고 있습니다.",
-    "ragged shower rain": "불규칙한 소나기가 내리고 있습니다.",
+    "light rain": "비가 조금씩 내리고 있어요.",
+    "moderate rain": "비가 내리고 있네요, 우산 꼭 챙기세요!",
+    "heavy intensity rain": "비가 많이 내리고 있으니 외출 시 조심하세요.",
+    "very heavy rain": "비가 너무 많이 쏟아지고 있어요. 조심하세요!",
+    "extreme rain": "폭우가 쏟아지고 있어요. 매우 위험하니 외출을 삼가세요!",
+    "freezing rain": "어는비가 내리고 있어요.",
+    "light intensity shower rain": "약한 소나기가 내리고 있어요.",
+    "shower rain": "소나기가 내리고 있어요.",
+    "heavy intensity shower rain": "강한 소나기가 내리고 있어요.",
+    "ragged shower rain": "불규칙한 소나기가 내리고 있어요.",
 
     // Group 6xx: Snow
-    "light snow": "약한 눈이 내리고 있습니다.",
-    "Snow": "눈이 내리고 있습니다.",
-    "Heavy snow": "강한 눈이 내리고 있습니다.",
-    "Sleet": "진눈깨비가 내리고 있습니다.",
-    "Light shower sleet": "약한 소나기성 진눈깨비가 내리고 있습니다.",
-    "Shower sleet": "소나기성 진눈깨비가 내리고 있습니다.",
-    "Light rain and snow": "약한 비와 눈이 내리고 있습니다.",
-    "Rain and snow": "비와 눈이 함께 내리고 있습니다.",
+    "light snow": "눈이 조금씩 내리고 있어요.",
+    "Snow": "눈이 내리고 있어요.",
+    "Heavy snow": "눈이 좀 많이 내리고 있네요, 조심하세요.",
+    "Sleet": "진눈깨비가 내리니, 다치지 않도록 조심하세요!",
+    "Light shower sleet": "약한 소나기성 진눈깨비가 내리고 있어요.",
+    "Shower sleet": "소나기성 진눈깨비가 내리고 있어요.",
+    "Light rain and snow": "약한 비와 눈이 내리고 있어요.",
+    "Rain and snow": "비와 눈이 함께 내리고 있어요.",
     "Light shower snow": "약한 소나기성 눈이 내리고 있습니다.",
     "Shower snow": "소나기성 눈이 내리고 있습니다.",
     "Heavy shower snow": "강한 소나기성 눈이 내리고 있습니다.",
@@ -121,16 +121,16 @@ export const koTenkiDescription: Record<string, string> = {
     "dust": "먼지가 날리고 있습니다.",
     "volcanic ash": "화산재가 날리고 있습니다.",
     "squalls": "돌풍이 불고 있습니다.",
-    "tornado": "토네이도가 발생했습니다.",
+    "tornado": "토네이도가 일어나고 있다아아ㅏㅏㅏㅏ!!!!!!!!",
 
     // Group 800: Clear
-    "clear sky": "하늘이 맑습니다.",
+    "clear sky": "하늘이 매우 맑네요!",
 
     // Group 80x: Clouds
-    "few clouds": "구름이 조금 끼어 있습니다.",
-    "scattered clouds": "곳곳에 구름이 떠 있습니다.",
-    "broken clouds": "구름이 많습니다.",
-    "overcast clouds": "하늘이 흐립니다.",
+    "few clouds": "하늘에 구름이 조금 끼어 있고, 맑은 날씨예요.",
+    "scattered clouds": "하늘 곳곳에 구름이 껴 있네요.",
+    "broken clouds": "구름이 많아 흐린 상태예요.",
+    "overcast clouds": "하늘에.. 구름이 너무나 많네요. 매우 흐린 상태예요.",
 }
 export function getKoTenkiDescription(englishDescription: string): string {
     return koTenkiDescription[englishDescription] || englishDescription;
@@ -149,40 +149,40 @@ export const koForecastDescription: Record<string, string> = {
     "thunderstorm with drizzle": "이슬비와 천둥번개",
 
     // Group 3xx: Drizzle
-    "light intensity drizzle": "약한 이슬비",
+    "light intensity drizzle": "이슬비 조금",
     "drizzle": "이슬비",
-    "heavy intensity drizzle": "강한 이슬비",
-    "light intensity drizzle rain": "약한 비 또는 이슬비",
-    "drizzle rain": "비 또는 이슬비",
-    "heavy intensity drizzle rain": "강한 비 또는 이슬비",
+    "heavy intensity drizzle": "많은 이슬비",
+    "light intensity drizzle rain": "비 약간과 이슬비",
+    "drizzle rain": "비와 이슬비",
+    "heavy intensity drizzle rain": "많은 비와 이슬비",
     "shower rain and drizzle": "소나기와 이슬비",
     "heavy shower rain and drizzle": "강한 소나기와 이슬비",
     "shower drizzle": "소나기성 이슬비",
 
     // Group 5xx: Rain
-    "light rain": "약한 비",
-    "moderate rain": "보통 비",
-    "heavy intensity rain": "강한 비",
-    "very heavy rain": "매우 강한 비",
-    "extreme rain": "폭우",
-    "freezing rain": "얼어붙는 비",
-    "light intensity shower rain": "약한 소나기",
-    "shower rain": "소나기",
-    "heavy intensity shower rain": "강한 소나기",
+    "light rain": "비가 조금 내릴 것 같네요.",
+    "moderate rain": "비가 조금 많이 올 예정이에요.",
+    "heavy intensity rain": "음, 비가 그냥 쏟아지겠네요.",
+    "very heavy rain": "우와, 비가 엄청나게 쏟아질 것 같네요.",
+    "extreme rain": "폭우가 쏟아질 것 같네요.",
+    "freezing rain": "얼어붙는 비가 내릴 것 같네요.",
+    "light intensity shower rain": "약한 소나기가 내릴 것 같네요.",
+    "shower rain": "소나기가 내릴 것 같네요.",
+    "heavy intensity shower rain": "강한 소나기가 내릴 것 같네요.",
     "ragged shower rain": "불규칙한 소나기",
 
     // Group 6xx: Snow
-    "light snow": "약한 눈",
-    "Snow": "눈",
-    "Heavy snow": "강한 눈",
-    "Sleet": "진눈깨비",
-    "Light shower sleet": "약한 소나기성 진눈깨비",
-    "Shower sleet": "소나기성 진눈깨비",
-    "Light rain and snow": "약한 비와 눈",
-    "Rain and snow": "비와 눈",
-    "Light shower snow": "약한 소나기성 눈",
-    "Shower snow": "소나기성 눈",
-    "Heavy shower snow": "강한 소나기성 눈",
+    "light snow": "눈이 조금 내릴 것 같네요.",
+    "Snow": "눈이 내릴 것 같네요.",
+    "Heavy snow": "많은 눈이 내릴 것 같네요.",
+    "Sleet": "진눈깨비가 내릴 것 같네요.",
+    "Light shower sleet": "약한 소나기성 진눈깨비가 내릴 것 같네요.",
+    "Shower sleet": "소나기성 진눈깨비가 내릴 것 같네요.",
+    "Light rain and snow": "약한 비와 눈이 내릴 것 같네요.",
+    "Rain and snow": "비와 눈이 함께 내릴 것 같네요.",
+    "Light shower snow": "약한 소나기성 눈이 내릴 것 같네요.",
+    "Shower snow": "소나기성 눈이 내릴 것 같네요.",
+    "Heavy shower snow": "강한 소나기성 눈이 내릴 것 같네요.",
 
     // Group 7xx: Atmosphere
     "mist": "엷은 안개",
@@ -197,13 +197,13 @@ export const koForecastDescription: Record<string, string> = {
     "tornado": "토네이도",
 
     // Group 800: Clear
-    "clear sky": "맑음",
+    "clear sky": "이 날에는 하늘이 맑을 예정이에요.",
 
     // Group 80x: Clouds
-    "few clouds": "구름 조금",
-    "scattered clouds": "구름 낌",
-    "broken clouds": "구름 많음",
-    "overcast clouds": "흐림",
+    "few clouds": "구름이 조금 낄 예정이에요.",
+    "scattered clouds": "구름이 조금 많이 낄 예정이에요.",
+    "broken clouds": "구름 많을 예정이에요.",
+    "overcast clouds": "하늘에 구름이 많아 흐릴 것 같네요.",
 }
 export function getKoForecastDescription(englishDescription: string): string {
     return koForecastDescription[englishDescription] || englishDescription;
@@ -288,10 +288,10 @@ function App() {
     if (!tenki || !forecast) return <motion.p transition={transition} initial={{ opacity: 0, y: 80, x: 50, scale: 0.8 }} animate={{ opacity: 1, y: 50, scale: 1 }}>날씨 정보를 불러오지 못했습니다.</motion.p>;
 
     return (
-        <motion.div transition={transition} initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} className="app-container flex flex-col gap-6 pl-10 pr-10 pt-16 max-w-screen min-h-300px">
+        <motion.div transition={transition} initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} className="app-container flex flex-col gap-6 pl-10 pr-10 max-w-screen min-h-300px">
             {/* <Application autoStart sharedTicker /> */}
-            <main>
-                <section className="flex flex-col gap-2 w-full">
+            <main className="flex flex-col gap-6 w-full max-w-screen">
+                <section className="sticky top-0 flex flex-col gap-2 w-full">
                     {/* --- 현재 날씨 텍스트와 상태, 온도, 현재 상태 아이콘이 포함된 div --- */}
                     <div className="flex gap-6 items-center pt-2"> 
                         <div className="text-flex">
@@ -304,67 +304,74 @@ function App() {
                             </div>
                             <p className="text-lg">{getKoTenkiDescription(tenki.weather[0].description)}</p>
                         </div>
-                        <motion.img transition={transition2} initial={{opacity: 0, y: 20}} animate={{opacity: 1}} className="w-40 h-40" src={`https://openweathermap.org/img/wn/${tenki.weather[0].icon}@4x.png`} alt="weather icon"/>
                     </div>
                     {/* --- */}
-                    <ul className="flex gap-6 ml-46 justify-items-center w-full">
-                        <li className="flex flex-col">
-                            <p>체감 온도</p>
-                            <h4 className="text-2xl font-bold">{tenki.main.feels_like}°C</h4>
-                        </li>
-                        <li className="flex flex-col">
-                            <p>최고 온도</p>
-                            <h4 className="text-2xl font-bold">{tenki.main.temp_max}°C</h4>
-                        </li>
-                        <li className="flex flex-col">
-                            <p>최저 온도</p>
-                            <h4 className="text-2xl font-bold">{tenki.main.temp_min}°C</h4>
-                        </li>
-                        <li className="flex flex-col">
-                            <p>습도</p>
-                            <h4 className="text-2xl font-bold">{tenki.main.humidity}%</h4>
-                        </li>
-                        <li className="flex flex-col">
-                            <p>풍속</p>
-                            <h4 className="text-2xl font-bold">{tenki.wind.speed}m/s</h4>
-                        </li>
-                    </ul>
-                </section>
-                <section className="flex ml-46 flex-col gap-1 w-full">
-                    <h4 className="text-lg font-semibold">대기질</h4>
-                    <ul className="flex flex-row gap-4 w-full">
-                        <li className="flex flex-col">
-                            <p>공기질</p>
-                            <h4 className="text-2xl font-bold">{air_pollution.main.aqi}</h4>
-                        </li>
-                        <li className="flex flex-col">
-                            <p>pm2.5</p>
-                            <h4 className="text-2xl font-bold">{air_pollution.components.pm2_5}</h4>
-                        </li>
-                        <li className="flex flex-col">
-                            <p>pm10</p>
-                            <h4 className="text-2xl font-bold">{air_pollution.components.pm10}</h4>
-                        </li>
-                    </ul>
+                    <section className="flex flex-row items-center w-full">
+                        <motion.img transition={transition2} initial={{opacity: 0, y: 40}} animate={{opacity: 1, y: -6}} className="w-40 h-40" src={`https://openweathermap.org/img/wn/${tenki.weather[0].icon}@4x.png`} alt="weather icon"/>
+                        <div className="flex flex-col gap-4 ml-3.5 w-full">
+                            <ul className="flex gap-6 ml-0 justify-items-center w-full">
+                                <li className="flex flex-col">
+                                    <p>체감 온도</p>
+                                    <h4 className="text-2xl font-bold">{tenki.main.feels_like}°C</h4>
+                                </li>
+                                <li className="flex flex-col">
+                                    <p>최고 온도</p>
+                                    <h4 className="text-2xl font-bold">{tenki.main.temp_max}°C</h4>
+                                </li>
+                                <li className="flex flex-col">
+                                    <p>최저 온도</p>
+                                    <h4 className="text-2xl font-bold">{tenki.main.temp_min}°C</h4>
+                                </li>
+                                <li className="flex flex-col">
+                                    <p>습도</p>
+                                    <h4 className="text-2xl font-bold">{tenki.main.humidity}%</h4>
+                                </li>
+                                <li className="flex flex-col">
+                                    <p>풍속</p>
+                                    <h4 className="text-2xl font-bold">{tenki.wind.speed}m/s</h4>
+                                </li>
+                            </ul>
+                            <div className='flex flex-col gap-1'>
+                                <h4 className="text-lg font-semibold">대기질</h4>
+                                <ul className="flex flex-row gap-4 w-full">
+                                    <li className="flex flex-col">
+                                        <p>공기질</p>
+                                        <h4 className="text-2xl font-bold">{air_pollution.main.aqi}</h4>
+                                    </li>
+                                    <li className="flex flex-col">
+                                        <p>pm2.5</p>
+                                        <h4 className="text-2xl font-bold">{air_pollution.components.pm2_5}</h4>
+                                    </li>
+                                    <li className="flex flex-col">
+                                        <p>pm10</p>
+                                        <h4 className="text-2xl font-bold">{air_pollution.components.pm10}</h4>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
                 </section>
                 <motion.section transition={transition2} initial={{opacity: 0, y: 60}} animate={{opacity: 1, y: 0}} className="embla" ref={emblaRef}>
                     <div className="item">
                         {forecast?.list?.map((item: any) => (
                             <ul className="tenki-list-item" key={item.dt_txt}>
-                                <li className="flex w-28">{item.dt_txt}</li>
-                                <ul className="flex flex-col gap-2">
-                                    <li className="flex flex-col">
-                                        <motion.img transition={transition2} initial={{opacity: 0}} animate={{opacity: 1}} className="w-20 h-20" src={`https://openweathermap.org/img/wn/${item.weather[0].icon}@2x.png`} alt="weather icon"/>
+                                <li className="flex w-full">{item.dt_txt}</li>
+                                <ul className="flex flex-row items-center h-16">
+                                    <li className="flex w-full">
                                         <div>
-                                            <h3 className="text-xl">{item.main.temp}°C</h3>
-                                            <h2 className="text-2xl font-bold">{getKoTenkiMain(item.weather[0].main)}</h2>
-                                            <p className="text-lg">{getKoForecastDescription(item.weather[0].description)}</p>
+                                            <div className='flex flex-col'>
+                                                <p className="text-2xl">{getKoTenkiMain(item.weather[0].main)}</p>
+                                                <h4 className="text-xl font-bold">{item.main.temp}°C</h4>
+                                            </div>
                                         </div>
                                     </li>
-                                    <li>
+                                    <li className='flex flex-col w-full'>
                                         <p>체감 온도</p>
-                                        <h4 className="text-lg">{item.main.feels_like}°C</h4>                                  </li>
+                                        <h4 className="text-lg">{item.main.feels_like}°C</h4>
+                                    </li>
+                                    <motion.img transition={transition2} initial={{opacity: 0}} animate={{opacity: 1}} className="w-22 h-22" src={`https://openweathermap.org/img/wn/${item.weather[0].icon}@2x.png`} alt="weather icon"/>
                                 </ul>
+                                <p className="text-lg w-full pt-0.5">{getKoForecastDescription(item.weather[0].description)}</p>
                             </ul>
                         ))}
                     </div>

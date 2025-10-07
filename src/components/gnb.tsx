@@ -2,7 +2,7 @@ import { SiGithub } from '@icons-pack/react-simple-icons';
 
 export default function Gnb() {
   return (
-    <div className="fixed backdrop-blur-md top-0 left-0 right-0 transition">
+    <div className="fixed z-50 backdrop-blur-sm top-0 left-0 right-0 transition">
       <div className='flex pt-2 pb-2 pl-6 pr-6 w-full justify-between items-center'>
         <div className='flex gap-4 items-center'>
           <img className="w-8.5 h-8.5 rounded-4xl" src="https://avatars.githubusercontent.com/u/71020988?v=4" alt="profile"/>
