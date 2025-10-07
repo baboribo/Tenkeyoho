@@ -39,7 +39,7 @@
 
 @media (prefers-color-scheme: dark) {
     :root {
-        color: #f0ecf4;
+        color: #eeecf4;
         --icons-color: #f0ecf4;
         background-color: #0F0E12;
         --sub-font-color: #b8c2d1;
