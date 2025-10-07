@@ -355,8 +355,8 @@ function App() {
                     <div className="item">
                         {forecast?.list?.map((item: any) => (
                             <ul className="tenki-list-item" key={item.dt_txt}>
-                                <li className="flex w-full">{item.dt_txt}</li>
-                                <ul className="flex flex-row items-center h-16">
+                                <li className="flex w-full z-10">{item.dt_txt}</li>
+                                <ul className="tenki-list-content flex flex-row items-center h-16">
                                     <li className="flex w-full">
                                         <div>
                                             <div className='flex flex-col'>
@@ -371,7 +371,8 @@ function App() {
                                     </li>
                                     <motion.img transition={transition2} initial={{opacity: 0}} animate={{opacity: 1}} className="w-22 h-22" src={`https://openweathermap.org/img/wn/${item.weather[0].icon}@2x.png`} alt="weather icon"/>
                                 </ul>
-                                <p className="text-lg w-full pt-0.5">{getKoForecastDescription(item.weather[0].description)}</p>
+                                <p className="text-lg w-full pt-0.5 z-10">{getKoForecastDescription(item.weather[0].description)}</p>
+                                <span className="tenki-list-bg"></span>
                             </ul>
                         ))}
                     </div>

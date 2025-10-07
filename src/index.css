@@ -120,15 +120,39 @@ p {
 }
 
 .tenki-list-item {
-    width: 500px !important;
+    position: relative;
+    width: 500px;
     display: flex;
     flex-direction: column;
     text-decoration: none;
     list-style: none;
     padding: 12px 18px;
-    /* background-color: #1d1c20; */
-    border-radius: 16px;
+    border-radius: 18px;
+    overflow: hidden;
+    z-index: 10;
 }
+
+.tenki-list-bg {
+    position: absolute;
+    inset: 0;
+    background-color: transparent;
+    border-radius: 18px;
+    transform: scale(0.9);
+    transition: transform 1.5s cubic-bezier(.15,.26,0,1), background-color 0.4s;
+}
+
+.tenki-list-item:hover .tenki-list-bg {
+    transform: scale(1);
+    filter: blur(0px);
+    background-color: #1d1b24;
+    transition: transform 0.28s cubic-bezier(.2,1.02,.63,.93), background-color 0.25s;
+}
+
+.tenki-list-content {
+    position: relative;
+    z-index: 10;
+}
+
 
 .embla {
     width: 100%;
