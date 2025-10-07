@@ -24,8 +24,10 @@
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
+    --icons-color: #213547;
     background-color: #ffffff;
     --sub-font-color: #505b6e;
+    --tenki-item-hover-bg: #eaeff8;
   }
   a:hover {
     color: #747bff;
@@ -37,9 +39,18 @@
 
 @media (prefers-color-scheme: dark) {
     :root {
+        color: #eeecf4;
+        --icons-color: #f0ecf4;
         background-color: #0F0E12;
         --sub-font-color: #b8c2d1;
+        --tenki-item-hover-bg: #1d1b24;
     }
+}
+
+.icons {
+    width: 24px;
+    height: 24px;
+    color: var(--icons-color);
 }
 
 a {
@@ -58,12 +69,11 @@ body {
 }
 
 main {
+    margin-top: 60px;
     display: flex;
-    flex-direction: column;
-    place-items: start;
-    max-width: 1320px;
-    overflow: hidden;
-    gap: 20px;
+    max-width: 1420px;
+    overflow: visible;
+    gap: 64px;
 }
 
 h1 {
@@ -111,31 +121,58 @@ p {
 }
 
 .item {
+    width: 100%;
     display: flex;
-    gap: 20px;
+    flex-direction: column;
     align-items: center;
+    z-index: 1;
 }
 
 .tenki-list-item {
-    width: 300px !important;
+    position: relative;
+    width: 500px;
     display: flex;
     flex-direction: column;
     text-decoration: none;
     list-style: none;
-    margin: 6px 11px 6px 0px;
-    background-color: none;
-    border-radius: 20px;
+    padding: 12px 18px;
+    border-radius: 18px;
+    overflow: visible;
+    z-index: 10;
 }
+
+.tenki-list-bg {
+    position: absolute;
+    inset: 0;
+    background-color: transparent;
+    border-radius: 18px;
+    transform: scale(0.9);
+    transition: transform 1.5s cubic-bezier(.15,.26,0,1), background-color 0.4s;
+}
+
+.tenki-list-item:hover .tenki-list-bg {
+    transform: scale(1);
+    filter: blur(0px);
+    background-color: var(--tenki-item-hover-bg);
+    transition: transform 0.28s cubic-bezier(.2,1.02,.63,.93), background-color 0.25s;
+}
+
+.tenki-list-content {
+    position: relative;
+    z-index: 10;
+}
+
 
 .embla {
     width: 100%;
-    overflow: hidden;
+    overflow: visible;
 }
 
 .embla__container {
     display: flex;
 }
 .embla__slide {
-    flex: 0 0 100%;
+    flex: 0 0 0 auto;
     min-width: 0;
+    flex-direction: column;
 }
