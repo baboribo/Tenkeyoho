@@ -26,6 +26,7 @@
     color: #213547;
     background-color: #ffffff;
     --sub-font-color: #505b6e;
+    --tenki-item-hover-bg: #eaeff8;
   }
   a:hover {
     color: #747bff;
@@ -39,6 +40,7 @@
     :root {
         background-color: #0F0E12;
         --sub-font-color: #b8c2d1;
+        --tenki-item-hover-bg: #1d1b24;
     }
 }
 
@@ -144,7 +146,7 @@ p {
 .tenki-list-item:hover .tenki-list-bg {
     transform: scale(1);
     filter: blur(0px);
-    background-color: #1d1b24;
+    background-color: var(--tenki-item-hover-bg);
     transition: transform 0.28s cubic-bezier(.2,1.02,.63,.93), background-color 0.25s;
 }
 
