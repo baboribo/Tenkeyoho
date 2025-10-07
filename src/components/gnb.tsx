@@ -7,7 +7,7 @@ export default function Gnb() {
         <div className='flex gap-4 items-center'>
           <img className="w-8.5 h-8.5 rounded-4xl" src="https://avatars.githubusercontent.com/u/71020988?v=4" alt="profile"/>
           <div className='flex gap-2 items-center'>
-            <h4>m_ny29</h4>
+            <h4>m_ny9*</h4>
             <p>/</p>
             <h4>Tenki</h4>
           </div>
