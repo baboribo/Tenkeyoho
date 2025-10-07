@@ -209,6 +209,54 @@ export function getKoForecastDescription(englishDescription: string): string {
     return koForecastDescription[englishDescription] || englishDescription;
 }
 
+export function getPm25Status(pm25: number): string {
+    if (pm25 <= 15) return "좋음";
+    if (pm25 <= 35) return "보통";
+    if (pm25 <= 75) return "나쁨";
+    return "매우 나쁨";
+}
+export function getPm25StatusColor(pm25: number): string {
+    if (pm25 <= 15) return "#4ADD85";
+    if (pm25 <= 35) return "#E47734";
+    if (pm25 <= 75) return "#ED3333";
+    return "#F634C8";
+}
+
+export function getPm10Status(pm10: number): string {
+    if (pm10 <= 30) return "좋음";
+    if (pm10 <= 80) return "보통";
+    if (pm10 <= 150) return "나쁨";
+    return "매우 나쁨";
+}
+export function getPm10StatusColor(pm10: number): string {
+    if (pm10 <= 30) return "#4ADD85";
+    if (pm10 <= 80) return "#E47734";
+    if (pm10 <= 150) return "#ED3333";
+    return "#F634C8";
+}
+
+export const aqiKo: Record<number, string> = {
+  1: "좋음",
+  2: "보통",
+  3: "나쁨",
+  4: "많이 나쁨",
+  5: "매우 나쁨"
+};
+export function getAqiStatus(aqi: number) {
+  return aqiKo[aqi] || "알 수 없음";
+}
+export const aqiKoColor: Record<number, string> = {
+  1: "#4ADD85",
+  2: "#E47734",
+  3: "#ED3333",
+  4: "#F634C8",
+  5: "#5D47A0"
+};
+export function getAqiStatusColor(aqi: number) {
+  return aqiKoColor[aqi] || "none";
+}
+
+
 function App() {
     const [emblaRef] = useEmblaCarousel({dragFree: true});
     const [tenki, setTenki] = useState<any>(null);
@@ -291,7 +339,7 @@ function App() {
         <motion.div transition={transition} initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} className="app-container flex flex-col gap-6 pl-10 pr-10 min-h-270px">
             {/* <Application autoStart sharedTicker /> */}
             <main className="flex flex-col lg:flex-row gap-6 w-full">
-                <section className="sticky top-0 pl-5 pr-5 lg:ml-0 lg:mr-0 flex flex-col gap-2 w-full">
+                <section className="top-0 lg:sticky lg:top-13 flex flex-col gap-2 w-full h-fit">
                     {/* --- 현재 날씨 텍스트와 상태, 온도, 현재 상태 아이콘이 포함된 div --- */}
                     <div className="flex gap-6 items-center pt-2"> 
                         <div className="text-flex">
@@ -335,16 +383,49 @@ function App() {
                                 <h4 className="text-lg font-semibold">대기질</h4>
                                 <ul className="flex flex-row gap-4 w-full">
                                     <li className="flex flex-col">
-                                        <p>공기질</p>
-                                        <h4 className="text-2xl font-bold">{air_pollution.main.aqi}</h4>
+                                        <p>공기질 지수(AQI)</p>
+                                        <div className='flex flex-row items-center gap-2'>
+                                            <span
+                                                style={{
+                                                    width: "10px",
+                                                    height: "10px",
+                                                    background: getAqiStatusColor(air_pollution.main.aqi),
+                                                    borderRadius: "50%",
+                                                    display: "inline-block"
+                                                }}
+                                            />
+                                            <h4 className="text-2xl font-bold">{getAqiStatus(air_pollution.main.aqi)}</h4>
+                                        </div>
                                     </li>
                                     <li className="flex flex-col">
-                                        <p>pm2.5</p>
-                                        <h4 className="text-2xl font-bold">{air_pollution.components.pm2_5}</h4>
+                                        <p>미세먼지(PM10)</p>
+                                        <div className='flex flex-row items-center gap-2'>
+                                            <span
+                                                style={{
+                                                    width: "10px",
+                                                    height: "10px",
+                                                    background: getPm10StatusColor(air_pollution.components.pm10),
+                                                    borderRadius: "50%",
+                                                    display: "inline-block"
+                                                }}
+                                            />
+                                            <h4 className="text-2xl font-bold">{getPm10Status(air_pollution.components.pm10)}</h4>
+                                        </div>
                                     </li>
                                     <li className="flex flex-col">
-                                        <p>pm10</p>
-                                        <h4 className="text-2xl font-bold">{air_pollution.components.pm10}</h4>
+                                        <p>초미세먼지(PM2.5)</p>
+                                        <div className='flex flex-row items-center gap-2'>
+                                            <span
+                                                style={{
+                                                    width: "10px",
+                                                    height: "10px",
+                                                    background: getPm25StatusColor(air_pollution.components.pm2_5),
+                                                    borderRadius: "50%",
+                                                    display: "inline-block"
+                                                }}
+                                            />
+                                            <h4 className="text-2xl font-bold">{getPm25Status(air_pollution.components.pm2_5)}</h4>
+                                        </div>
                                     </li>
                                 </ul>
                             </div>
@@ -392,6 +473,14 @@ function App() {
                                     <li className='flex flex-col w-full'>
                                         <p>체감 온도</p>
                                         <h4 className="text-lg">{item.main.feels_like}°C</h4>
+                                    </li>
+                                    <li className='flex flex-col w-full'>
+                                        <p>강수량</p>
+                                        <h4 className="text-lg">
+                                            {item?.rain?.["3h"] !== undefined
+                                            ? `${item.rain["3h"]} mm`
+                                            : "0 mm"}
+                                        </h4>
                                     </li>
                                     <motion.img transition={transition2} initial={{opacity: 0}} animate={{opacity: 1}} className="w-22 h-22" src={`https://openweathermap.org/img/wn/${item.weather[0].icon}@2x.png`} alt="weather icon"/>
                                 </ul>

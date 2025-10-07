@@ -72,7 +72,7 @@ main {
     margin-top: 60px;
     display: flex;
     max-width: 1420px;
-    overflow: hidden;
+    overflow: visible;
     gap: 64px;
 }
 
