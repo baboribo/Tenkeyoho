@@ -470,7 +470,7 @@ function App() {
                     </div>
                 </motion.section>
             </main>
-            <motion.div transition={transition} initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} className='flex flex-col w-full gap-4'>
+            <motion.div transition={transition} initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} className='flex flex-col w-full gap-4 mb-10'>
                 <hr className="mt-6 flex flex-col gap-3 border-t border-gray-300 dark:border-gray-700 pt-3 mb-2 w-full"/>
                 <div className='flex flex-col gap-4'>
                     <div className='flex flex-col'>
