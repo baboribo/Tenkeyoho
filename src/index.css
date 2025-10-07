@@ -24,6 +24,7 @@
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
+    --icons-color: #213547;
     background-color: #ffffff;
     --sub-font-color: #505b6e;
     --tenki-item-hover-bg: #eaeff8;
@@ -38,10 +39,18 @@
 
 @media (prefers-color-scheme: dark) {
     :root {
+        color: #f0ecf4;
+        --icons-color: #f0ecf4;
         background-color: #0F0E12;
         --sub-font-color: #b8c2d1;
         --tenki-item-hover-bg: #1d1b24;
     }
+}
+
+.icons {
+    width: 24px;
+    height: 24px;
+    color: var(--icons-color);
 }
 
 a {

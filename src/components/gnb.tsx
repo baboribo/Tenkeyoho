@@ -25,7 +25,7 @@ export default function Gnb() {
                 <p className='opacity-70 hover:opacity-100 transition cursor-pointer'>밤의 세계로 이동</p>
             </a>
             <a href='https://github.com/baboribo/Tenkeyoho'>
-                <SiGithub size={24} color="#ffffff" className='opacity-70 hover:opacity-100 transition cursor-pointer' />
+                <SiGithub size={24} className='icons opacity-70 hover:opacity-100 transition cursor-pointer' />
             </a>
         </div>
       </div>
