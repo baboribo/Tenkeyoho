@@ -218,12 +218,12 @@ function App() {
     const [coords, setCoords] = useState<any>(null);
 
     const transition: Transition = {
-        duration: 0.44,
+        duration: 0.50,
         ease: [.17,.02,.05,.98],
     }
     const transition2: Transition = {
-        duration: 0.37,
-        delay: 0.27,
+        duration: 0.50,
+        delay: 0.2,
         ease: [.17,.02,.05,.98],
     }
 
@@ -284,8 +284,8 @@ function App() {
             });
     }, [coords]);
 
-    if (loading) return <motion.p transition={transition} initial={{ opacity: 0, y: 40, x: 40, scale: 0.9 }} animate={{ opacity: 1, y: 20, scale: 1 }} exit={{ opacity: 0 }}>로딩 중...</motion.p>;
-    if (!tenki || !forecast) return <motion.p transition={transition} initial={{ opacity: 0, y: 40, x: 40, scale: 0.9 }} animate={{ opacity: 1, y: 20, scale: 1 }}>날씨 정보를 불러오지 못했습니다. 인터넷 상태를 확인하거나 기기에 GPS가 있는지 확인하세요.</motion.p>;
+    if (loading) return <motion.p transition={transition} initial={{ opacity: 0, y: 80, x: 50, scale: 0.8 }} animate={{ opacity: 1, y: 50, scale: 1 }}>로딩 중...</motion.p>;
+    if (!tenki || !forecast) return <motion.p transition={transition} initial={{ opacity: 0, y: 80, x: 50, scale: 0.8 }} animate={{ opacity: 1, y: 50, scale: 1 }}>날씨 정보를 불러오지 못했습니다.</motion.p>;
 
     return (
         <motion.div transition={transition} initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} className="app-container flex flex-col gap-6 pl-10 pr-10 pt-16 max-w-screen min-h-300px">
@@ -294,7 +294,6 @@ function App() {
                 <section className="flex flex-col gap-2 w-full">
                     {/* --- 현재 날씨 텍스트와 상태, 온도, 현재 상태 아이콘이 포함된 div --- */}
                     <div className="flex gap-6 items-center pt-2"> 
-                        <motion.img transition={transition2} initial={{opacity: 0}} animate={{opacity: 1}} className="w-40 h-40" src={`https://openweathermap.org/img/wn/${tenki.weather[0].icon}@4x.png`} alt="weather icon"/>
                         <div className="text-flex">
                             <div className="flex gap-2 w-full items-center">
                                 <h3>{getKoCityName(tenki.name)}</h3>
@@ -305,6 +304,7 @@ function App() {
                             </div>
                             <p className="text-lg">{getKoTenkiDescription(tenki.weather[0].description)}</p>
                         </div>
+                        <motion.img transition={transition2} initial={{opacity: 0, y: 20}} animate={{opacity: 1}} className="w-40 h-40" src={`https://openweathermap.org/img/wn/${tenki.weather[0].icon}@4x.png`} alt="weather icon"/>
                     </div>
                     {/* --- */}
                     <ul className="flex gap-6 ml-46 justify-items-center w-full">
