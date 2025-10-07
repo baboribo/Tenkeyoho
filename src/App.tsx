@@ -336,10 +336,10 @@ function App() {
     if (!tenki || !forecast) return <motion.p transition={transition} initial={{ opacity: 0, y: 80, x: 50, scale: 0.8 }} animate={{ opacity: 1, y: 50, scale: 1 }}>날씨 정보를 불러오지 못했습니다.</motion.p>;
 
     return (
-        <motion.div transition={transition} initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} className="app-container flex flex-col gap-6 pl-10 pr-10 min-h-270px">
+        <motion.div transition={transition} initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} className="app-container flex flex-col gap-6 pl-10 pr-10 max-w-screen min-h-270px">
             {/* <Application autoStart sharedTicker /> */}
             <main className="flex flex-col lg:flex-row gap-6 w-full">
-                <section className="top-0 lg:sticky lg:top-13 flex flex-col gap-2 w-full h-fit">
+                <section className="top-0 relative lg:sticky lg:top-13 flex flex-col gap-2 w-full h-fit">
                     {/* --- 현재 날씨 텍스트와 상태, 온도, 현재 상태 아이콘이 포함된 div --- */}
                     <div className="flex gap-6 items-center pt-2"> 
                         <div className="text-flex">
